@@ -4,4 +4,272 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView_main_header"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/boeing747engines" />
+
+    <ImageView
+        android:id="@+id/imageView_main_poster"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_main_header"
+        app:layout_constraintDimensionRatio="w,2:3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_main_header"
+        app:srcCompat="@drawable/flightsimposter" />
+
+    <TextView
+        android:id="@+id/textView_main_gameHeading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/microsoft_flight_simulator_standard_edition"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton_main_bookmark"
+        app:layout_constraintStart_toEndOf="@+id/imageView_main_poster"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_main_header"
+        tools:text="Microsoft Flight Simulator: Standard Edition" />
+
+    <ImageButton
+        android:id="@+id/imageButton_main_bookmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackground"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_main_header"
+        app:srcCompat="@drawable/ic_bookmark" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <TextView
+        android:id="@+id/textView_main_smallDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/asobo_studios"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toEndOf="@+id/imageView_main_poster"
+        app:layout_constraintTop_toBottomOf="@+id/textView_main_gameHeading"
+        tools:text="Asobo Studios" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_main_smallDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="imageView_main_poster,textView_main_smallDesc"
+        tools:layout_editor_absoluteY="731dp" />
+
+    <Button
+        android:id="@+id/button_main_freeXBoxLive"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/free_with_xbox_live"
+        app:layout_constraintEnd_toStartOf="@+id/button_main_buy"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_main_smallDesc"
+        tools:text="GET WITH XBOX LIVE" />
+
+    <Button
+        android:id="@+id/button_main_buy"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/buy_from_49_99"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_main_freeXBoxLive"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_main_smallDesc"
+        tools:text="BUY FROM $59.99" />
+
+    <TextView
+        android:id="@+id/textView_main_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="16dp"
+        android:layerType="hardware"
+        android:text="@string/_3_0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/floatingActionButton_main_rated"
+        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton_main_rated"
+        app:layout_constraintStart_toStartOf="@+id/floatingActionButton_main_rated"
+        app:layout_constraintTop_toTopOf="@+id/floatingActionButton_main_rated"
+        tools:text="3.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton_main_rated"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#00FFFFFF"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton_main_adventure"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_main_bottomButtons"
+        app:maxImageSize="54dp"
+        app:srcCompat="@drawable/googleplaypolygon"
+        app:useCompatPadding="false" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton_main_adventure"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:rotation="45"
+        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton_main_tv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton_main_rated"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_main_bottomButtons"
+        app:maxImageSize="36dp"
+        app:srcCompat="@drawable/baseline_airplanemode_active_white_18dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton_main_tv"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton_main_similar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton_main_adventure"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_main_bottomButtons"
+        app:maxImageSize="36dp"
+        app:srcCompat="@drawable/baseline_cast_white_18dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton_main_similar"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton_main_tv"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_main_bottomButtons"
+        app:maxImageSize="36dp"
+        app:srcCompat="@drawable/baseline_view_carousel_white_18dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_main_bottomButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="button_main_buy,button_main_freeXBoxLive"
+        tools:layout_editor_absoluteY="731dp" />
+
+    <TextView
+        android:id="@+id/textView_main_rated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/rating"
+        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton_main_rated"
+        app:layout_constraintStart_toStartOf="@+id/floatingActionButton_main_rated"
+        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton_main_rated"
+        tools:text="Rating" />
+
+    <TextView
+        android:id="@+id/textView_main_adventure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/adventure"
+        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton_main_adventure"
+        app:layout_constraintStart_toStartOf="@+id/floatingActionButton_main_adventure"
+        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton_main_adventure" />
+
+    <TextView
+        android:id="@+id/textView_main_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv"
+        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton_main_tv"
+        app:layout_constraintStart_toStartOf="@+id/floatingActionButton_main_tv"
+        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton_main_tv"
+        tools:text="TV" />
+
+    <TextView
+        android:id="@+id/textView_main_similar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/similar"
+        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton_main_similar"
+        app:layout_constraintStart_toStartOf="@+id/floatingActionButton_main_similar"
+        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton_main_similar" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_main_bottomTextDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="textView_main_similar,textView_main_adventure,textView_main_tv,textView_main_rated"
+        tools:layout_editor_absoluteY="731dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/from_light_planes_to_wide_body_jets_fly_highly_detailed_and_accurate_aircraft_in_the_next_generation_of_microsoft_flight_simulator_test_your_piloting_skills_against_the_challenges_of_night_flying_real_time_atmospheric_simulation_and_live_weather_in_a_dynamic_and_living_world"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_main_bottomTextDesc"
+        tools:text="From light planes to wide-body jets, fly highly detailed and accurate aircraft in the next generation of Microsoft Flight Simulator. Test your piloting skills against the challenges of night flying, real-time atmospheric simulation and live weather in a dynamic and living world." />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
